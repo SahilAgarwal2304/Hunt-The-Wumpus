@@ -1,6 +1,3 @@
-// HUNT THE WUMPUS - COMPLETE FIX
-// - Wumpus is COMPLETELY HIDDEN during active game
-// - Keyboard (WASD + Arrow Keys) works 100% with focus fix
 
 const SIZE = 6;
 let playerPos = { row: 0, col: 0 };
@@ -56,10 +53,7 @@ function renderGrid() {
       else if (!gameActive && wumpusPos.row === i && wumpusPos.col === j) {
         cell.textContent = gameWin ? '💀' : '🐗';
       }
-      // ACTIVE GAME: Wumpus cell is completely empty (hidden)
-      else if (gameActive && wumpusPos.row === i && wumpusPos.col === j) {
-        cell.textContent = '';   // 👈 HIDDEN – no icon, no text
-      }
+      // Everything else gets the standard hidden pattern
       else {
         cell.textContent = '⬚';
         cell.style.opacity = '0.7';
