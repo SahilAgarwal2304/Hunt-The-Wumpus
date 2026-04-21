@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Hunt the Wumpus</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-container">
+    <header>
+      <h1>🏹 HUNT THE WUMPUS 🐗</h1>
+      <div class="subhead">Classic cave hunt – feel the stench, aim your arrow!</div>
+    </header>
+
+    <div class="game-panel">
+      <!-- dynamic 6x6 grid -->
+      <div id="game-grid" class="game-grid"></div>
+
+      <!-- status & stench hints -->
+      <div class="info-area">
+        <div id="status-message" class="status-message">✨ Move with WASD or movement pad. Stand next to Wumpus → shoot! ✨</div>
+        <div id="scent-hint" class="scent-hint"></div>
+      </div>
+
+      <!-- CONTROLLER 1: MOVEMENT (4 buttons) -->
+      <div class="controller-card">
+        <h3>🎮 MOVEMENT CONTROLLER</h3>
+        <div class="button-grid movement-grid">
+          <button class="ctrl-btn move-btn" data-dx="-1" data-dy="0" id="move-up">▲ UP</button>
+          <button class="ctrl-btn move-btn" data-dx="0" data-dy="-1" id="move-left">◀ LEFT</button>
+          <button class="ctrl-btn move-btn" data-dx="1" data-dy="0" id="move-down">▼ DOWN</button>
+          <button class="ctrl-btn move-btn" data-dx="0" data-dy="1" id="move-right">▶ RIGHT</button>
+        </div>
+        <p class="key-hint">⌨️ also <kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd> to move</p>
+      </div>
+
+      <!-- CONTROLLER 2: SHOOTING (4 directional buttons) -->
+      <div class="controller-card">
+        <h3>🏹 SHOOTING CONTROLLER</h3>
+        <div class="button-grid shooting-grid">
+          <button class="ctrl-btn shoot-btn" data-dx="-1" data-dy="0" id="shoot-up">🏹 SHOOT NORTH</button>
+          <button class="ctrl-btn shoot-btn" data-dx="0" data-dy="-1" id="shoot-left">🏹 SHOOT WEST</button>
+          <button class="ctrl-btn shoot-btn" data-dx="1" data-dy="0" id="shoot-down">🏹 SHOOT SOUTH</button>
+          <button class="ctrl-btn shoot-btn" data-dx="0" data-dy="1" id="shoot-right">🏹 SHOOT EAST</button>
+        </div>
+        <p class="key-hint">⌨️ <kbd>▲</kbd> <kbd>▼</kbd> <kbd>◀</kbd> <kbd>▶</kbd> arrow keys to shoot!</p>
+      </div>
+
+      <!-- reset button -->
+      <button class="action-btn reset-btn" id="reset-game">🔄 RESTART GAME</button>
+
+      <!-- how to play -->
+      <div class="how-to-play">
+        <h3>📜 HOW TO PLAY – HUNT THE WUMPUS</h3>
+        <p>🐗 <strong>Goal:</strong> Kill the Wumpus before it eats you! The beast hides somewhere in the 6x6 cave.</p>
+        <p>👃 <strong>Stench:</strong> If you are next to the Wumpus (up/down/left/right), you'll smell its foul stench → a warning appears.</p>
+        <p>🎮 <strong>Movement:</strong> Use the <strong>MOVEMENT CONTROLLER</strong> (4 buttons) OR keyboard <kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd>.</p>
+        <p>🏹 <strong>Shooting:</strong> Use the <strong>SHOOTING CONTROLLER</strong> (4 direction buttons) OR <kbd>▲</kbd> <kbd>▼</kbd> <kbd>◀</kbd> <kbd>▶</kbd> arrow keys. <strong>You must be adjacent (next to) the Wumpus and shoot in its direction to kill it.</strong></p>
+        <p>💀 <strong>Danger:</strong> Stepping on the Wumpus = you're eaten. Game over.</p>
+        <p>🏆 <strong>Victory:</strong> Shoot the Wumpus from an adjacent cell! You have unlimited arrows, but aim wisely.</p>
+        <p class="tip">✔️ Fully responsive | On-screen buttons + full keyboard support | Restart anytime</p>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
